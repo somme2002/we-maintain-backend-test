@@ -40,10 +40,31 @@ For the previous step, we had 1400 bands across 376 venues, and around 20,000 ev
 
 Describe in detail how you would store and query the data, and what kind of mechanism you would leverage to consistently deliver short response times and guarantee the highest uptime possible.
 
+
+Pour reduire le temps de reponse et avoir la haute disponibilité , on peut utiliser 2 clusters qui permet de sépararer les requêtes entre l'écriture et lecture du BDD.
+Puis une mise en place d'un système de cache distribué (Redis) serait renforcé la performance de la microservice
+
+
 Please then answer the two following questions : 
 
 - What do you identify as possible risks in the architecture that you described in the long run, and how would you mitigate those?
+
+la risk dans cette l'architecture , c'est que l'on peut pas avoir les CAP (Consistency, Availability, Partition Tolerance) en même temps
+
+Cohérence (Consistency en anglais) : tous les nœuds du système voient exactement les mêmes données au même moment ;
+Disponibilité (Availability en anglais) : garantie que toutes les requêtes reçoivent une réponse;
+Tolérance au partitionnement (Partition Tolerance en anglais) : aucune panne moins importante qu'une coupure totale du réseau ne doit empêcher le système de répondre correctement (ou encore : en cas de morcellement en sous-réseaux, chacun doit pouvoir fonctionner de manière autonome).
+
+Ici, on a choit c'est (Partition et Disponibilité), donc on a un risque d'avoir incohérence de données.
+
+
 - What are the key elements of your architecture that would need to be monitored, and what would you use to monitor those?
+Tous les apis sont UP
+La temps de reponse en moyen sur chaque requête et historiser les contenue de requêtes 
+Les BDDs sont UP
+Les données sont cohérents
+Les caches sont UP( l'espaces sont disponibles)
+
 
 # Requirements
 

@@ -20,8 +20,16 @@ type Concert {
   date: Float
 }
 
+type ConcertResult {
+  band: String
+  location: String
+  latitude: Float
+  longitude: Float
+  date: Float
+}
+
 type Query {
-  concerts(concertFilter: ConcertFilter!): [Concert!]!
+  concerts(concertFilter: ConcertFilter!): [ConcertResult!]!
   concertFindAll: [Concert!]!
   band(id: String!): Band!
   bands: [Band!]!

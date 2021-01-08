@@ -32,6 +32,21 @@
 $ npm install
 ```
 
+## Running the DataBase
+```bash
+# build
+$ docker-compose -f docker-compose.dev.yml build
+
+# start
+$ docker-compose -f docker-compose.dev.yml up
+
+# stop
+$ docker-compose -f docker-compose.dev.yml down
+
+# Insert database
+$ yarn migrate:run
+
+```
 ## Running the app
 
 ```bash
