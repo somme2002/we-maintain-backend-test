@@ -49,22 +49,27 @@ Please then answer the two following questions :
 
 - What do you identify as possible risks in the architecture that you described in the long run, and how would you mitigate those?
 
-la risk dans cette l'architecture , c'est que l'on peut pas avoir les CAP (Consistency, Availability, Partition Tolerance) en même temps
+```
+La risk dans cette l'architecture , c'est que l'on peut pas avoir les CAP (Consistency, Availability, Partition Tolerance) en même temps
 
 Cohérence (Consistency en anglais) : tous les nœuds du système voient exactement les mêmes données au même moment ;
 Disponibilité (Availability en anglais) : garantie que toutes les requêtes reçoivent une réponse;
 Tolérance au partitionnement (Partition Tolerance en anglais) : aucune panne moins importante qu'une coupure totale du réseau ne doit empêcher le système de répondre correctement (ou encore : en cas de morcellement en sous-réseaux, chacun doit pouvoir fonctionner de manière autonome).
 
 Ici, on a choit c'est (Partition et Disponibilité), donc on a un risque d'avoir incohérence de données.
-
+```
 
 - What are the key elements of your architecture that would need to be monitored, and what would you use to monitor those?
 Tous les apis sont UP
-La temps de reponse en moyen sur chaque requête et historiser les contenue de requêtes 
-Les BDDs sont UP
-Les données sont cohérents
-Les caches sont UP( l'espaces sont disponibles)
 
+
+```
+
+ - la temps de reponse en moyen sur chaque requête et historiser les contenue de requêtes 
+ - Les BDDs sont UP
+ - Les données sont cohérents
+ - Les caches sont UP( l'espaces sont disponibles)
+```
 
 # Requirements
 
