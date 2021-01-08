@@ -40,10 +40,12 @@ For the previous step, we had 1400 bands across 376 venues, and around 20,000 ev
 
 Describe in detail how you would store and query the data, and what kind of mechanism you would leverage to consistently deliver short response times and guarantee the highest uptime possible.
 
-
-Pour reduire le temps de reponse et avoir la haute disponibilité , on peut utiliser 2 clusters qui permet de sépararer les requêtes entre l'écriture et lecture du BDD.
+```
+Pour reduire le temps de reponse et avoir la haute disponibilité 
+donc on peut utiliser 2 clusters qui permet de sépararer les requêtes entre l'écriture et lecture du BDD.
 Puis une mise en place d'un système de cache distribué (Redis) serait renforcé la performance de la microservice
 
+```
 
 Please then answer the two following questions : 
 
@@ -60,12 +62,11 @@ Ici, on a choit c'est (Partition et Disponibilité), donc on a un risque d'avoir
 ```
 
 - What are the key elements of your architecture that would need to be monitored, and what would you use to monitor those?
-Tous les apis sont UP
 
 
 ```
-
- - la temps de reponse en moyen sur chaque requête et historiser les contenue de requêtes 
+ - Tous les apis sont UP
+ - La temps de reponse en moyen sur chaque requête et historiser les contenue de requêtes 
  - Les BDDs sont UP
  - Les données sont cohérents
  - Les caches sont UP( l'espaces sont disponibles)
